@@ -1,0 +1,9 @@
+The goal of caching is to avoid having to generate the same response twice. The business reason to use caching is that it helps us gain speed, reduce server load, and reduce our dollars spent.
+
+A RESTful API being cacheable is one of the most important REST constraints and one of the most important ways of handling large scale.
+
+
+
+The ETag HTTP response header is an id for the specific resource version. A lot of the time people will use a checksum or hash of the resource so that it’s different each time it changes.
+
+The ETag value can then be used in the “If-None-Match” Reqiest header. If it’s not changed, the server should respond with a 304 Not Modified HTTP status code. The client should then used the cached resource.
